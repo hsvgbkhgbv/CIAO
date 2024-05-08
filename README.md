@@ -9,21 +9,23 @@ The demos of experiments are shown on https://sites.google.com/view/ciao2024.
 
 ## 1. Requirements Following GPL Settings
 
-(1) Set up a Python environment with Python 3.7.11.
+**(1) Set up a Python environment with Python 3.7.11.** 
 
-(2) To install required packages, execute the following command:
+**(2) To install required packages, execute the following command:** 
 
 ```setup
 pip install -r requirements.txt
 ```
 
-(3) We also require a modified version of OpenAI gym to run the provided codes. To do the necessary modifications to `gym`, check the directory of the `gym` package using
+**(3) We also require a modified version of OpenAI gym to run the provided codes.**
+
+To do the necessary modifications to `gym`, check the directory of the `gym` package using
 
 ```setup
 pip show gym
 ```
 
-Assuming the package is installed in `<DIR>`, replace `<DIR>/gym/vector/async_vector_env.py` with the `async_vector_env.py` that we have provided. This can be achieved using the following command: 
+Assuming that the package is installed in `<DIR>`, replace `<DIR>/gym/vector/async_vector_env.py` with the `async_vector_env.py` we have provided. This can be achieved using the following command: 
 
 ```setup
 cp async_vector_env.py <DIR>/gym/vector/async_vector_env.py
@@ -48,7 +50,7 @@ For all environments, run the following commands to train CIAO-S, CIAO-C and GPL
 cd <Environment Name>/algorithm
 ```
 
-### (1) Experiments in Section 5.1 and 5.2
+### (1) Experiments in Section 5.1 and 5.2: Experimental results on identical agent-type sets for training and testing
 #### Maximum of 5 agents during test
 **GPL**
 ```python
@@ -108,7 +110,7 @@ python main_mrf.py --graph="star" --weight_regularizer=0.5 --pair_range="neg" --
 #### Maximum of 9 agents during test
 The scripts of all algorithms are the same as above, but only with change of `--num_players_test=5` to `--num_players_test=9`.
 
-### (2) Experiments in Section 5.3
+### (2) Experiments in Section 5.3: Validating that solving GPL optimization problem is an approximation of Bellman operator in OSB-CAG (with identical agent-type sets in training and testing)
 Since the scripts of CIAO-C and CIAO-S are the same as that for the maximum of 5 agents, we only show the scripts of CIAO-S-Va and CIAO-C-Va as follows:
 
 **CIAO-C-Va**
@@ -121,7 +123,7 @@ python main_mrf1.py --graph="complete" --weight_regularizer=0.5 --pair_range="po
 python main_mrf1.py --graph="star" --weight_regularizer=0.5 --pair_range="pos" --indiv_range="pos" --note <NOTE> --save_dir=<SAVE_DIR> --num_players_test=5 --update_manner="variant"
 ```
 
-### (3) Experiments in Appendix J.2 and J.3: Agent-type sets excluding A2C agent (only for LBF)
+### (3) Experiments in Appendix J.2 and J.3: Agent-type sets excluding A2C agent (still identical in training and testing and only for LBF)
 #### Maximum of 5 agents during test
 **GPL**
 ```python
@@ -181,9 +183,9 @@ python main_mrf.py --graph="star" --weight_regularizer=0.5 --pair_range="neg" --
 #### Maximum of 9 agents during test
 The scripts of all algorithms are the same as above, but only with change of `--num_players_test=5` to `--num_players_test=9`.
 
-### (4) Experiments in Appendix J.4: Generalizability of CIAO with different agent-type sets for training and testing
+### (4) Experiments in Appendix J.4: Generalizability of CIAO with different agent-type sets in training and testing
 
-#### Agent-type sets for training and testing have intersection, with one shared agent-type
+#### Agent-type sets in training and testing have intersection, with one shared agent-type
 **GPL**
  ```python
  python main_mrf1.py --graph="complete" --weight_regularizer=0.0 --pair_range="free" --indiv_range="free" --note <NOTE> --save_dir=<SAVE_DIR> --num_players_test=5 --intersection_generalization
@@ -199,7 +201,7 @@ The scripts of all algorithms are the same as above, but only with change of `--
  python main_mrf1.py --graph="star" --weight_regularizer=0.5 --pair_range="pos" --indiv_range="pos" --note <NOTE> --save_dir=<SAVE_DIR> --num_players_test=5 --intersection_generalization
  ```
 
-#### Agent-type sets for training and testing are mutually exclusive
+#### Agent-type sets in training and testing are mutually exclusive
 **GPL**
 ```python
 python main_mrf1.py --graph="complete" --weight_regularizer=0.0 --pair_range="free" --indiv_range="free" --note <NOTE> --save_dir=<SAVE_DIR> --num_players_test=5 --exclusion_generalization
@@ -215,7 +217,7 @@ python main_mrf1.py --graph="complete" --weight_regularizer=0.5 --pair_range="po
 python main_mrf1.py --graph="star" --weight_regularizer=0.5 --pair_range="pos" --indiv_range="pos" --note <NOTE> --save_dir=<SAVE_DIR> --num_players_test=5 --exclusion_generalization
 ```
 
-### (5) Experiments in Appendix J.5: CIAO with no regularizers
+### (5) Experiments in Appendix J.5: CIAO with no regularizers (agent-type sets being identical in training and testing)
 Since the scripts of CIAO-C and CIAO-S are the same as that for experiments in Section 5.1 and 5.2 above, we only show the scripts of CIAO-S-NR and CIAO-C-NR as follows:
 
 #### Maximum of 5 agents during test (LBF including A2C agent / Wolfpack)
@@ -268,3 +270,16 @@ Aside from training models, the shell script also periodically checkpoints the m
 ```script
 tensorboard --logdir=<Environment Name>/algorithm/runs
 ```
+
+## Citing
+If you would like to use the result of this paper, please cite the following paper:
+```
+@article{wang2024open,
+  title={Open Ad Hoc Teamwork with Cooperative Game Theory},
+  author={Wang, Jianhong and Li, Yang and Zhang, Yuan and Pan, Wei and Kaski, Samuel},
+  journal={arXiv preprint arXiv:2402.15259},
+  year={2024}
+}
+```
+## Contact
+If you have any queries about this paper, please drop an email to jianhong.wang@manchester.ac.uk.
