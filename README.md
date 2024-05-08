@@ -9,13 +9,15 @@ The demos of experiments are shown on https://sites.google.com/view/ciao2024.
 
 ## 1. Requirements Following GPL Settings
 
-To install required packages, execute the following command:
+(1) Set up a Python environment with Python 3.7.11.
+
+(2) To install required packages, execute the following command:
 
 ```setup
 pip install -r requirements.txt
 ```
 
-We also require a modified version of OpenAI gym to run the provided codes. To do the necessary modifications to `gym`, check the directory of the `gym` package using
+(3) We also require a modified version of OpenAI gym to run the provided codes. To do the necessary modifications to `gym`, check the directory of the `gym` package using
 
 ```setup
 pip show gym
