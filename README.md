@@ -7,7 +7,7 @@ This repository includes the implementation of the ICML 2024 paper titled [**Ope
 
 The demos of experiments are shown on https://sites.google.com/view/ciao2024.
 
-## 1. Requirements Following GPL Settings
+## 1. Requirements Following [GPL](https://proceedings.mlr.press/v139/rahman21a.html) Settings
 
 **(1) Set up a Python environment with Python 3.7.11.** 
 
@@ -264,7 +264,7 @@ python main_mrf.py --graph="complete" --weight_regularizer=0.0 --pair_range="pos
 python main_mrf.py --graph="star" --weight_regularizer=0.0 --pair_range="pos" --indiv_range="pos" --note <NOTE> --save_dir=<SAVE_DIR> --num_players_test=9 --exclude_A2Cagent
 ```
 
-## Monitoring Experimental Results
+## 3. Monitoring Experimental Results
 Aside from training models, the shell script also periodically checkpoints the model and evaluates it in the training and evaluation environment. We specifically run several episodes under the evaluation setup and log the resulting performance using tensorboard. The resulting logs can be viewed using the following command : 
 
 ```script
