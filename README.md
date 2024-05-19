@@ -9,15 +9,25 @@ The demos of experiments are shown on https://sites.google.com/view/ciao2024.
 
 ## 1. Requirements Following [GPL](https://proceedings.mlr.press/v139/rahman21a.html) Settings
 
-**(1) Set up a Python environment with Python 3.7.11.** 
+**(1) Set up a Python environment with Python 3.7.12.** 
 
-**(2) To install required packages, execute the following command:** 
+**(2) Install required packages, execute the following command:** 
 
 ```setup
 pip install -r requirements.txt
 ```
 
-**(3) We also require a modified version of OpenAI gym to run the provided codes.**
+**(3) Install environments**
+
+For either LBF or Wolfpack, please ensure to install the environments using the following commands:
+```setup
+cd <Environment Name>/env
+pip install -e .
+```
+
+**NOTE**: We recommend setting two different virtual environments for `Wolfpack` and `LBF`, respectively, to avoid the potential conflicts between these two experimental environments.
+
+**(4) We also require a modified version of OpenAI gym to run the provided codes.**
 
 To do the necessary modifications to `gym`, check the directory of the `gym` package using
 
@@ -34,17 +44,9 @@ cp async_vector_env.py <DIR>/gym/vector/async_vector_env.py
 
 ## 2. Training
 
-The training codes of experiments are contained in `Wolfpack` and `LBF`, respectively. Full description of the hyperparameters and the architecture used in this work is provided in the appendix of our paper. 
+The training codes of experiments are contained in `Wolfpack` and `LBF`, respectively. Full description of the hyperparameters and the architecture used in this work is provided in the appendix of our paper.
 
-Before training the models in LBF and Wolfpack, please ensure to install the environments used in the experiments using the following commands:
-```setup
-cd <Environment Name>/env
-pip install -e .
-```
-
-**NOTE**: We recommend setting two different virtual environments for `Wolfpack` and `LBF`, respectively, to avoid the potential conflicts between these two experimental environments.
-
-For all environments, run the following commands to train CIAO-S, CIAO-C and GPL:
+For either environment, run the following commands to train CIAO-S, CIAO-C and GPL:
 
 ```setup
 cd <Environment Name>/algorithm
