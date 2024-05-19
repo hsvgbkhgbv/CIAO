@@ -17,7 +17,7 @@ The demos of experiments are shown on https://sites.google.com/view/ciao2024.
 pip install -r requirements.txt
 ```
 
-**(3) Install environments**
+**(3) Install environments.**
 
 For either LBF or Wolfpack, please ensure to install the environments using the following commands:
 ```setup
@@ -27,7 +27,7 @@ pip install -e .
 
 **NOTE**: We recommend setting two different virtual environments for `Wolfpack` and `LBF`, respectively, to avoid the potential conflicts between these two experimental environments.
 
-**(4) We also require a modified version of OpenAI gym to run the provided codes.**
+**(4) A modified version of OpenAI gym is required.**
 
 To do the necessary modifications to `gym`, check the directory of the `gym` package using
 
