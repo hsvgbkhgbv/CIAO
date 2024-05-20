@@ -52,6 +52,11 @@ For either environment, run the following commands to train CIAO-S, CIAO-C and G
 cd <Environment Name>/algorithm
 ```
 
+Set the following environmental variable:
+```setup
+export OMP_NUM_THREADS=1
+```
+
 ### (1) Experiments in Section 5.1 and 5.2: Experimental results on identical agent-type sets for training and testing
 #### Maximum of 5 agents during test
 **GPL**
