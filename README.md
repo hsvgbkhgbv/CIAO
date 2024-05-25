@@ -130,7 +130,43 @@ python main_mrf1.py --graph="complete" --weight_regularizer=0.5 --pair_range="po
 python main_mrf1.py --graph="star" --weight_regularizer=0.5 --pair_range="pos" --indiv_range="pos" --note <NOTE> --save_dir=<SAVE_DIR> --num_players_test=5 --update_manner="variant"
 ```
 
-### (3) Experiments in Appendix J.2 and J.3: Agent-type sets excluding A2C agent (still identical in training and testing and only for LBF)
+
+### (3) Experiments in Section 5.4: Generalizability of CIAO with different agent-type sets in training and testing
+
+#### Agent-type sets in training and testing have intersection, with one shared agent-type
+**GPL**
+ ```python
+ python main_mrf1.py --graph="complete" --weight_regularizer=0.0 --pair_range="free" --indiv_range="free" --note <NOTE> --save_dir=<SAVE_DIR> --num_players_test=5 --intersection_generalization
+ ```
+
+ **CIAO-C**
+ ```python
+ python main_mrf1.py --graph="complete" --weight_regularizer=0.5 --pair_range="pos" --indiv_range="pos" --note <NOTE> --save_dir=<SAVE_DIR> --num_players_test=5 --intersection_generalization
+ ```
+
+ **CIAO-S**
+ ```python
+ python main_mrf1.py --graph="star" --weight_regularizer=0.5 --pair_range="pos" --indiv_range="pos" --note <NOTE> --save_dir=<SAVE_DIR> --num_players_test=5 --intersection_generalization
+ ```
+
+#### Agent-type sets in training and testing are mutually exclusive
+**GPL**
+```python
+python main_mrf1.py --graph="complete" --weight_regularizer=0.0 --pair_range="free" --indiv_range="free" --note <NOTE> --save_dir=<SAVE_DIR> --num_players_test=5 --exclusion_generalization
+```
+
+**CIAO-C**
+```python
+python main_mrf1.py --graph="complete" --weight_regularizer=0.5 --pair_range="pos" --indiv_range="pos" --note <NOTE> --save_dir=<SAVE_DIR> --num_players_test=5 --exclusion_generalization
+```
+
+**CIAO-S**
+```python
+python main_mrf1.py --graph="star" --weight_regularizer=0.5 --pair_range="pos" --indiv_range="pos" --note <NOTE> --save_dir=<SAVE_DIR> --num_players_test=5 --exclusion_generalization
+```
+
+
+### (4) Experiments in Appendix I.2 and I.3: Agent-type sets excluding A2C agent (still identical in training and testing and only for LBF)
 #### Maximum of 5 agents during test
 **GPL**
 ```python
@@ -190,41 +226,8 @@ python main_mrf.py --graph="star" --weight_regularizer=0.5 --pair_range="neg" --
 #### Maximum of 9 agents during test
 The scripts of all algorithms are the same as above, but only with change of `--num_players_test=5` to `--num_players_test=9`.
 
-### (4) Experiments in Appendix J.4: Generalizability of CIAO with different agent-type sets in training and testing
 
-#### Agent-type sets in training and testing have intersection, with one shared agent-type
-**GPL**
- ```python
- python main_mrf1.py --graph="complete" --weight_regularizer=0.0 --pair_range="free" --indiv_range="free" --note <NOTE> --save_dir=<SAVE_DIR> --num_players_test=5 --intersection_generalization
- ```
-
- **CIAO-C**
- ```python
- python main_mrf1.py --graph="complete" --weight_regularizer=0.5 --pair_range="pos" --indiv_range="pos" --note <NOTE> --save_dir=<SAVE_DIR> --num_players_test=5 --intersection_generalization
- ```
-
- **CIAO-S**
- ```python
- python main_mrf1.py --graph="star" --weight_regularizer=0.5 --pair_range="pos" --indiv_range="pos" --note <NOTE> --save_dir=<SAVE_DIR> --num_players_test=5 --intersection_generalization
- ```
-
-#### Agent-type sets in training and testing are mutually exclusive
-**GPL**
-```python
-python main_mrf1.py --graph="complete" --weight_regularizer=0.0 --pair_range="free" --indiv_range="free" --note <NOTE> --save_dir=<SAVE_DIR> --num_players_test=5 --exclusion_generalization
-```
-
-**CIAO-C**
-```python
-python main_mrf1.py --graph="complete" --weight_regularizer=0.5 --pair_range="pos" --indiv_range="pos" --note <NOTE> --save_dir=<SAVE_DIR> --num_players_test=5 --exclusion_generalization
-```
-
-**CIAO-S**
-```python
-python main_mrf1.py --graph="star" --weight_regularizer=0.5 --pair_range="pos" --indiv_range="pos" --note <NOTE> --save_dir=<SAVE_DIR> --num_players_test=5 --exclusion_generalization
-```
-
-### (5) Experiments in Appendix J.5: CIAO with no regularizers (agent-type sets being identical in training and testing)
+### (5) Experiments in Appendix I.4: CIAO with no regularizers (agent-type sets being identical in training and testing)
 Since the scripts of CIAO-C and CIAO-S are the same as that for experiments in Section 5.1 and 5.2 above, we only show the scripts of CIAO-S-NR and CIAO-C-NR as follows:
 
 #### Maximum of 5 agents during test (LBF including A2C agent / Wolfpack)
