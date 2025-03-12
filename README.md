@@ -284,11 +284,13 @@ tensorboard --logdir=<Environment Name>/algorithm/runs
 ## Citing
 If you would like to use the result of this paper, please cite the following paper:
 ```
-@article{wang2024open,
+@inproceedings{wang2024open,
   title={Open Ad Hoc Teamwork with Cooperative Game Theory},
   author={Wang, Jianhong and Li, Yang and Zhang, Yuan and Pan, Wei and Kaski, Samuel},
-  journal={arXiv preprint arXiv:2402.15259},
-  year={2024}
+  booktitle={International Conference on Machine Learning},
+  pages={50902--50930},
+  year={2024},
+  organization={PMLR}
 }
 ```
 ## Contact
